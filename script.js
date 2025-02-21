@@ -40,3 +40,66 @@ const quizData = [
         ],
         answer: "<script>"
       },
+      {
+        question: "How do you create a function in JavaScript?",
+        choices: [
+          "function = myFunction()",
+          "function:myFunction()",
+          "function myFunction()",
+          "def myFunction()"
+        ],
+        answer: "function myFunction()"
+      },
+      {
+        question: "Which operator is used to assign a value to a variable in JavaScript?",
+        choices: [
+          "-",
+          "=",
+          "*",
+          "x"
+        ],
+        answer: "="
+      },
+      {
+        question: "What is the correct HTML element for inserting a line break?",
+        choices: [
+          "<br>",
+          "<lb>",
+          "<break>",
+          "<lnbr>"
+        ],
+        answer: "<br>"
+      },
+      {
+        question: "Which HTML attribute is used to define inline styles?",
+        choices: [
+          "font",
+          "styles",
+          "class",
+          "style"
+        ],
+        answer: "style"
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let selectedAnswer = null;
+    
+    const questionEl = document.getElementById("question");
+    const choicesEl = document.getElementById("choices");
+    const nextBtn = document.getElementById("next-btn");
+    const progressBar = document.getElementById("progress-bar");
+    const quizBox = document.getElementById("quiz-box");
+    const resultBox = document.getElementById("result-box");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart-btn");
+
+// Load the first question
+function loadQuestion() {
+    const currentData = quizData[currentQuestionIndex];
+    questionEl.textContent = currentData.question;
+    choicesEl.innerHTML = "";
+    selectedAnswer = null;
+    nextBtn.disabled = true;
+          
