@@ -94,12 +94,14 @@ const quizData = [
   const resultBox = document.getElementById("result-box");
   const scoreEl = document.getElementById("score");
   const restartBtn = document.getElementById("restart-btn");
+  const feedbackEl = document.getElementById("feedback");
   
   // Load the first question
   function loadQuestion() {
     const currentData = quizData[currentQuestionIndex];
     questionEl.textContent = currentData.question;
     choicesEl.innerHTML = "";
+    feedbackEl.textContent = "";
     selectedAnswer = null;
     nextBtn.disabled = true;
   
@@ -118,12 +120,28 @@ const quizData = [
   
   // Handle answer selection
   function selectAnswer(button, correctAnswer) {
-    // Remove previous selection
+    // Remove previous selection and feedback
     document.querySelectorAll(".choice-btn").forEach(btn => btn.classList.remove("selected"));
-    // Mark selected
+    feedbackEl.textContent = "";
+    
+    // Mark the selected button
     button.classList.add("selected");
     selectedAnswer = button.textContent;
-    nextBtn.disabled = false;
+    
+    // Enable Next button only if the answer is correct; if wrong, show feedback and disable next button.
+    if (selectedAnswer === correctAnswer) {
+      nextBtn.disabled = false;
+    } else {
+      nextBtn.disabled = true;
+      handleWrongAnswer();
+    }
+  }
+  
+  // Function to handle wrong answer selection
+  function handleWrongAnswer() {
+    // Here you can expand the functionality. For example, you can display a message,
+    // deduct points, or highlight the correct answer after several attempts.
+    feedbackEl.textContent = "Incorrect! Please try again.";
   }
   
   // Update progress bar
@@ -134,7 +152,7 @@ const quizData = [
   
   // Handle Next button click
   nextBtn.addEventListener("click", () => {
-    // Check answer
+    // Check if the selected answer is correct (it must be, since nextBtn is enabled only then)
     if (selectedAnswer === quizData[currentQuestionIndex].answer) {
       score++;
     }
@@ -150,7 +168,6 @@ const quizData = [
   
   // Show final results
   function showResults() {
-    // Update progress bar to full
     progressBar.style.width = "100%";
     quizBox.classList.add("hidden");
     resultBox.classList.remove("hidden");
@@ -167,4 +184,4 @@ const quizData = [
   });
   
   // Initial call to load the quiz
-  loadQuestion(); 
+  loadQuestion();  

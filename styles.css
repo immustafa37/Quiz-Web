@@ -104,6 +104,13 @@
     background: #fc5c7d;
   }
   
+  /* Feedback Message */
+  .feedback {
+    color: #d9534f;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
   /* Footer */
   footer {
     text-align: center;
@@ -115,4 +122,4 @@
   /* Utility */
   .hidden {
     display: none;
-  }
+  }  
