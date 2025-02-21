@@ -10,3 +10,33 @@ const quizData = [
       ],
       answer: "Hyper Text Markup Language"
     },
+    {
+        question: "What does CSS stand for?",
+        choices: [
+          "Creative Style Sheets",
+          "Cascading Style Sheets",
+          "Computer Style Sheets",
+          "Colorful Style Sheets"
+        ],
+        answer: "Cascading Style Sheets"
+      },
+      {
+        question: "Which language is used for web apps?",
+        choices: [
+          "PHP",
+          "Python",
+          "JavaScript",
+          "All of the above"
+        ],
+        answer: "All of the above"
+      },
+      {
+        question: "Inside which HTML element do we put the JavaScript?",
+        choices: [
+          "<script>",
+          "<js>",
+          "<scripting>",
+          "<javascript>"
+        ],
+        answer: "<script>"
+      },
