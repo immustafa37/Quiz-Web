@@ -48,3 +48,71 @@ header {
     background: #fff;
   }
   
+/* Main Quiz Box */
+main {
+    padding: 20px;
+  }
+  .quiz-box, .result-box {
+    text-align: center;
+  }
+  .quiz-box h2 {
+    margin-bottom: 20px;
+  }
+  #choices {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  #choices li {
+    margin: 10px 0;
+  }
+  .choice-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #6a82fb;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .choice-btn:hover {
+    background: #6a82fb;
+    color: #fff;
+  }
+  .choice-btn.selected {
+    background: #fc5c7d;
+    border-color: #fc5c7d;
+    color: #fff;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #6a82fb;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  .btn:hover:not(:disabled) {
+    background: #fc5c7d;
+  }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #eee;
+    font-size: 0.9rem;
+  }
+
+/* Utility */
+.hidden {
+    display: none;
+  }  
